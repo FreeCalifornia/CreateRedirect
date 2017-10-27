@@ -131,7 +131,7 @@ class SpecialCreateRedirect extends SpecialPage {
 			$resultDetails = false;
 			$ctx = RequestContext::getMain();
       			$tempTitle = $ctx->getTitle();
-      			$ctx->setTitle( $title );
+      			$ctx->setTitle( $crEditTitle );
 			$status = $crEdit->internalAttemptSave( $resultDetails, $wgUser->isAllowed( 'bot' ) && $wgRequest->getBool( 'bot', true ) );
 			$ctx->setTitle( $tempTitle );
 			$value = $status->value;
